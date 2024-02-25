@@ -1,12 +1,11 @@
-
 // get list of all 5 letter words
 const allWords = require('./words');
 // has these letters
-const hasLetters = ['b','l','a']; 
+const hasLetters = ['e','s','i']; 
 // must not has these letters
-const mustNotHaveLetters = ['r', ,'d','y','u','v'];
+const mustNotHaveLetters = ['r', 'a','d','y','b','l','u','v'];
 // must have selected letters in these positions
-const mustHaveLettersInPosition = ['b','l','a',,'e']
+const mustHaveLettersInPosition = ['s','p','i',,'e']
 // not in these positions
 const mustNotHaveLettersInPosition = [,'e',,'c','s']
 
