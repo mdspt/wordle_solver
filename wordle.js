@@ -1,11 +1,11 @@
 // get list of all 5 letter words
 const allWords = require('./words');
 // has these letters
-const hasLetters = ['e','s','i']; 
+const hasLetters = ['b','l','a']; 
 // must not has these letters
-const mustNotHaveLetters = ['r', 'a','d','y','b','l','u','v'];
+const mustNotHaveLetters = ['r','d','y','u','v'];
 // must have selected letters in these positions
-const mustHaveLettersInPosition = ['s','p','i',,'e']
+const mustHaveLettersInPosition = ['b','l','a',,'e']
 // not in these positions
 const mustNotHaveLettersInPosition = [,'e',,'c','s']
 
@@ -22,17 +22,12 @@ const hasLetterInPosition = (word, letter, position) => {
 
   return word[position] === letter;
 }
-const doesNotHasLetterInPosition = (word, letter, position) => {
-  if (letter === undefined) return true;
-
-  return word[position] !== letter;
-}
 
 const filteredWords = allWords.filter(word => {
   return hasLetters.every(letter => containsLetter(word, letter)) &&
   mustNotHaveLetters.every(letter => doesNotContainLetter(word, letter)) &&
   mustHaveLettersInPosition.every((letter, index) => hasLetterInPosition(word, letter, index)) && 
-  mustNotHaveLettersInPosition.every((letter, index) => doesNotHasLetterInPosition(word, letter, index)) 
+  mustNotHaveLettersInPosition.every((letter, index) => !hasLetterInPosition(word, letter, index)) 
 })
 
 console.log(filteredWords);
